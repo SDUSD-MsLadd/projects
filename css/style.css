@@ -1,0 +1,163 @@
+/*
+CSS Organization
+1. colors
+2. global/mobile styles
+3. tablet size styles
+4. desktop size styles
+*/
+
+/* colors */
+:root{
+    --LHSGreen1: #319941;
+    --LHSYellow: rgb(238, 198, 18);
+    --LHSYellowA: rgba(238, 198, 18, .4);
+    --LHSGreen2: #114828;
+    --LHSGray: #f2f2f2;
+}
+
+
+
+
+/* GLOBAL STYLES */
+
+/* elements */
+
+body{
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header.site-header, footer h5{
+    /* background-color: var(--LHSGreen1); */
+    background: linear-gradient(-45deg, var(--LHSGreen2), var(--LHSGreen1));
+    color: white;
+    margin: 0;
+}
+
+h1,footer h5{
+    padding: .5em;
+
+}
+h2, h3, h4, h5, h6{
+    color: var(--LHSGreen1);
+}
+
+.menu-link{
+    cursor: pointer;
+    display: inline-block;
+    background-color: var(--LHSYellow);
+    color: black;
+    font-weight: bold;
+    padding: .5em;
+    border-radius: .5em;
+    margin-left: .5em;
+}
+
+.hidden{
+    display: none;
+}
+
+.by-line{
+    color: var(--LHSYellow);
+    font-style:oblique;
+}
+
+a{
+    color: var(--LHSGreen1);
+}
+
+a:hover{
+    text-decoration: none;
+    color: var(--LHSGreen2);
+}
+
+nav.pathway{
+    max-height: 0;
+    overflow:hidden;
+    transition: max-height 3s; 
+    background-color:var(--LHSYellow);
+}
+
+nav.pathway.active{
+    max-height: 20em;
+}
+
+/* desktop style */
+nav.pathway a{
+    display: inline-block;
+    text-decoration: none;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    border: solid var(--LHSGreen2) 3px;
+    background-color:  var(--LHSGreen1);
+    color: var(--LHSYellow);
+    margin: 5px;
+}
+
+/* also desktop style */
+#tasks, #workplace {
+    display: inline-block;
+    margin: auto 0;
+    width: 49%;
+    vertical-align: top;
+}
+
+header nav.pathway a:hover{
+    color:  var(--LHSGreen1);
+    background-color: var(--LHSYellow);
+
+}
+
+
+figure.hero-image{
+    margin: 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.hero-image img{
+    max-width: 100%;
+}
+
+nav#internal {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+    padding: 1em;
+}
+
+main {
+    width: 60%;
+    margin: 0;
+    display: inline-block;
+}
+
+aside#related {
+    float: right;
+    width: 35%;
+    padding: 0 1em;
+    background-color: var(--LHSYellowA);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+cite{
+    display: block;
+    margin-bottom: 1em;
+}
+
+dt{
+    font-weight: bold;
+}
+
+dd p{
+    margin-bottom: 2px;
+}
+dd ol{
+    margin-top: 2px;
+}
