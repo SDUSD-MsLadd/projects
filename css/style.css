@@ -10,17 +10,16 @@ CSS Organization
 :root{
     --LHSGreen1: #319941;
     --LHSYellow: rgb(238, 198, 18);
-    --LHSYellowA: rgba(238, 198, 18, .4);
+    --LHSYellowA: #F8E8A0;
     --LHSGreen2: #114828;
     --LHSGray: #f2f2f2;
+    --darkbrown: #282C34;
 }
 
-
-
-
 /* GLOBAL STYLES */
-
-/* elements */
+*{
+    box-sizing: border-box;
+}
 
 body{
     font-size: 16px;
@@ -30,14 +29,18 @@ body{
 }
 
 header.site-header, footer h5{
-    /* background-color: var(--LHSGreen1); */
     background: linear-gradient(-45deg, var(--LHSGreen2), var(--LHSGreen1));
     color: white;
     margin: 0;
+    text-align: center;
+    border-bottom: var(--LHSGreen1);
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
 }
 
 h1,footer h5{
     padding: .5em;
+    margin: 0;
 
 }
 h2, h3, h4, h5, h6{
@@ -55,10 +58,6 @@ h2, h3, h4, h5, h6{
     margin-left: .5em;
 }
 
-.hidden{
-    display: none;
-}
-
 .by-line{
     color: var(--LHSYellow);
     font-style:oblique;
@@ -73,37 +72,65 @@ a:hover{
     color: var(--LHSGreen2);
 }
 
+nav a{
+    min-height: 50px;
+    display: inline-block;
+}
+
 nav.pathway{
     max-height: 0;
     overflow:hidden;
-    transition: max-height 3s; 
+    transition: all linear 2s; 
     background-color:var(--LHSYellow);
 }
 
 nav.pathway.active{
-    max-height: 20em;
+    max-height: 50em;
+    background-color:var(--LHSYellowA);
 }
 
-/* desktop style */
-nav.pathway a{
-    display: inline-block;
-    text-decoration: none;
-    width: fit-content;
-    padding: 5px;
+div.back-to-top{
+    max-height: initial;
+}
+
+nav h3.hidden{
+    display: none;
+}
+
+div.back-to-top.hidden{
+    max-height: 0;
+    overflow: hidden;
+}
+
+
+aside a.button{
+    background-color: var(--darkbrown);
     border-radius: 5px;
+    padding: .5em;
+    color: var(--LHSYellow);
+    transition: all linear .5s;
+    margin: 1em auto;
+    display: block;
+    text-align: center;
+    width: fit-content;
+}
+
+
+aside a.button:hover{
+    background-color: var(--LHSYellow);
+    color: var(--darkbrown);
+}
+
+nav.pathway a{
+    display:block;
+    text-decoration: none;
+    width: 100%;
+    padding: 5px;
     border: solid var(--LHSGreen2) 3px;
     background-color:  var(--LHSGreen1);
     color: var(--LHSYellow);
-    margin: 5px;
 }
 
-/* also desktop style */
-#tasks, #workplace {
-    display: inline-block;
-    margin: auto 0;
-    width: 49%;
-    vertical-align: top;
-}
 
 header nav.pathway a:hover{
     color:  var(--LHSGreen1);
@@ -111,6 +138,11 @@ header nav.pathway a:hover{
 
 }
 
+figure:not(.hero-image){
+    width: 100%;
+    display: block;
+    margin: 0;
+}
 
 figure.hero-image{
     margin: 0;
@@ -118,7 +150,7 @@ figure.hero-image{
     max-width: 1200px;
 }
 
-.hero-image img{
+.hero-image img, figure img{
     max-width: 100%;
 }
 
@@ -127,23 +159,21 @@ nav#internal {
     top: 0;
     z-index: 10;
     background: white;
+    padding: 0 1em 1em;
+}
+
+
+main {
+    width: 100%;
+    margin: 0;
     padding: 1em;
 }
 
-main {
-    width: 60%;
-    margin: 0;
-    display: inline-block;
-}
-
 aside#related {
-    float: right;
-    width: 35%;
-    padding: 0 1em;
+    width: 100%;
+    padding: 1em;
     background-color: var(--LHSYellowA);
-    height: 100vh;
-    position: sticky;
-    top: 0;
+
 }
 
 cite{
@@ -160,4 +190,118 @@ dd p{
 }
 dd ol{
     margin-top: 2px;
+}
+
+
+
+@media screen and (min-width:550px) {
+    nav.pathway{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav.pathway a{
+        width: 50%;
+    }
+
+    figure.vertical-orientation{
+        clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+        margin-top: -75%;
+    }
+}
+
+@media screen and (min-width:700px) {
+    figure.vertical-orientation{
+       clip-path: none;
+       margin-top: initial;
+
+    }
+
+    figure:not(.hero-image){
+        float: right; 
+        width: 40%;
+        font-size: 80%;
+    }
+   }
+   
+
+@media screen and (min-width:1000px) {
+    nav.pathway{
+        max-height: 0;
+        overflow:hidden;
+        transition: all linear 2s; 
+        background-color:var(--LHSYellow);
+        padding-bottom: .5em;
+    }
+    
+    nav.pathway.active{
+        max-height: 20em;
+    }
+
+    nav a{
+        min-height: 50px;
+        display: inline;
+    }
+
+    /* desktop style */
+    nav.pathway a{
+        display: inline-block;
+        text-decoration: none;
+        width: fit-content;
+        padding: 5px;
+        border-radius: 5px;
+        border: solid var(--LHSGreen2) 3px;
+        background-color:  var(--LHSGreen1);
+        color: var(--LHSYellow);
+        margin-top: .5em;
+        margin-left: .5em;
+    }
+
+    /* also desktop style */
+    #tasks, #workplace {
+        display: inline-block;
+        margin: auto 0;
+        width: 49%;
+        vertical-align: top;
+    }
+
+    main {
+        width: 65%;
+        margin: 0;
+        display: inline-block;
+        padding-right:1.5em;
+    }
+
+    aside#related {
+        float: right;
+        width: 35%;
+        padding: 0 1em;
+        background-color: var(--LHSYellowA);
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    header.site-header, footer h5{
+        text-align: left;
+    }
+
+    aside a.button{
+        margin-top: 2em;
+        background-color: var(--darkbrown);
+        border-radius: 5px;
+        padding: .5em;
+        color: var(--LHSYellow);
+        float: right;
+        transition: all linear .5s;
+    }
+
+    figure:not(.hero-image){
+        float: right; 
+        width: 30%;
+        font-size: 80%;
+        margin: 1em;;
+    }
+
+    
 }
