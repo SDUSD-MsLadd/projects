@@ -138,7 +138,11 @@ header nav.pathway a:hover{
 
 }
 
-figure:not(.hero-image){
+figure{
+    font-size: 80%;
+}
+
+figure.vertical-orientation, figure.horizontal-orientation{
     width: 100%;
     display: block;
     margin: 0;
@@ -193,7 +197,6 @@ dd ol{
 }
 
 
-
 @media screen and (min-width:550px) {
     nav.pathway{
         display: flex;
@@ -211,31 +214,25 @@ dd ol{
 }
 
 @media screen and (min-width:700px) {
+
     figure.vertical-orientation{
-       clip-path: none;
-       margin-top: initial;
-
-    }
-
-    figure:not(.hero-image){
+        clip-path: none;
         float: right; 
         width: 40%;
-        font-size: 80%;
+        margin: 1em .5em 1em 1em;
     }
    }
    
 
 @media screen and (min-width:1000px) {
     nav.pathway{
-        max-height: 0;
-        overflow:hidden;
-        transition: all linear 2s; 
         background-color:var(--LHSYellow);
-        padding-bottom: .5em;
+        padding-bottom: 0;
     }
     
     nav.pathway.active{
         max-height: 20em;
+        padding-bottom: .5em;
     }
 
     nav a{
@@ -243,7 +240,6 @@ dd ol{
         display: inline;
     }
 
-    /* desktop style */
     nav.pathway a{
         display: inline-block;
         text-decoration: none;
@@ -257,7 +253,7 @@ dd ol{
         margin-left: .5em;
     }
 
-    /* also desktop style */
+
     #tasks, #workplace {
         display: inline-block;
         margin: auto 0;
@@ -275,8 +271,6 @@ dd ol{
     aside#related {
         float: right;
         width: 35%;
-        padding: 0 1em;
-        background-color: var(--LHSYellowA);
         height: 100vh;
         position: sticky;
         top: 0;
@@ -288,18 +282,12 @@ dd ol{
 
     aside a.button{
         margin-top: 2em;
-        background-color: var(--darkbrown);
-        border-radius: 5px;
-        padding: .5em;
-        color: var(--LHSYellow);
         float: right;
-        transition: all linear .5s;
     }
 
-    figure:not(.hero-image){
+    figure.vertical-orientation{
         float: right; 
         width: 30%;
-        font-size: 80%;
         margin: 1em;;
     }
 
