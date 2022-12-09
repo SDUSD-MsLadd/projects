@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Holiday Snowman</title>
+    <style type="text/css">
+      body {
+        background-color: #ccffff;
+        margin: 0 auto;
+        font-family: Verdana;
+        text-align: center;
+      }
+
+      .wrapper {
+        width: 1120px;
+        background-image: url(images/vecteezywinter-outdoor-illustrationen0921_generated.jpg);
+        background-size: cover;
+        height: calc(100vh);
+        margin: 0 auto;
+        position: relative;
+      }
+
+      h1 {
+        color: #fb4462;
+        font-size: 4em;
+        margin: 0;
+        padding-top: 3rem;
+      }
+
+      .tossing {
+        animation-name: tossing;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes tossing {
+        0% {
+          transform: rotate(-6deg);
+        }
+        50% {
+          transform: rotate(6deg);
+        }
+        100% {
+          transform: rotate(-6deg);
+        }
+      }
+
+      #snowman {
+        position: absolute;
+        rotate: 0deg;
+        transition: transform 2s;
+        transform-origin: center bottom;
+        height: 400px;
+        width: 300px;
+        left: 600px;
+        bottom: 30px;
+      }
+
+      #snowman div {
+        position: absolute;
+      }
+
+      .snow {
+        background-color: white;
+      }
+
+      .belly {
+        width: 200px;
+        height: 200px;
+        top: 200px;
+        left: 50px;
+        border-radius: 50%;
+      }
+
+      .head {
+        width: 140px;
+        height: 140px;
+        top: 100px;
+        left: 80px;
+        border-radius: 50%;
+      }
+
+      .wood {
+        background-color: #6b4000;
+      }
+
+      .left-arm {
+        transform-origin: center bottom;
+        height: 80px;
+        width: 20px;
+        top: 160px;
+        left: 92px;
+        rotate: -45deg;
+      }
+
+      .right-arm {
+        transform-origin: center bottom;
+        height: 80px;
+        width: 20px;
+        top: 160px;
+        left: 186px;
+        rotate: 45deg;
+      }
+
+      .branch2,
+      .branch3 {
+        width: 10px;
+        height: 30px;
+      }
+
+      .branch1 {
+        width: 10px;
+        height: 80px;
+        top: 0;
+        left: 25%;
+      }
+
+      .branch2 {
+        top: 5px;
+        rotate: -45deg;
+        left: -5px;
+      }
+
+      .branch3 {
+        top: 5px;
+        rotate: 45deg;
+        left: 15px;
+      }
+
+      .charcoal {
+        background-color: black;
+        border-radius: 5px;
+        width: 20px;
+        height: 20px;
+        top: 145px;
+        left: 105px;
+      }
+
+      .charcoal.right {
+        left: 170px;
+      }
+
+      #mouth {
+        top: 40px;
+        left: -10px;
+      }
+
+      #mouth .charcoal {
+        transform: rotate(45deg);
+        height: 15px;
+        width: 15px;
+      }
+
+      #mouth div:nth-child(2) {
+        left: 127px;
+        top: 154px;
+      }
+      #mouth div:nth-child(3) {
+        left: 150px;
+        top: 158px;
+      }
+      #mouth div:nth-child(4) {
+        left: 172px;
+        top: 154px;
+      }
+      #mouth div:nth-child(5) {
+        left: 195px;
+      }
+
+      #carrot {
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 70px solid orange;
+        border-radius: 50%;
+        top: 148px;
+        left: 144px;
+        transform: rotate(-45deg);
+      }
+
+      #hat {
+        top: 110px;
+        left: 100px;
+      }
+
+      .hat {
+        background-color: black;
+        top: -50px;
+        left: 0px;
+        height: 50px;
+        width: 100px;
+      }
+
+      .brim {
+        background-color: black;
+        width: 150px;
+        height: 20px;
+        left: -25px;
+      }
+
+      footer {
+        font-size: 80%;
+        background-color: white;
+        color: grey;
+        position: absolute;
+        bottom: 0;
+        width: 1120px;
+		
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Wishing you and yours a happy holiday!</h1>
+      <div id="snowman" class="tossing">
+        <div class="belly snow"></div>
+        <div class="head snow"></div>
+        <div class="right-arm tossing">
+          <div class="branch1 wood"></div>
+          <div class="branch2 wood"></div>
+          <div class="branch3 wood"></div>
+        </div>
+        <div class="left-arm">
+          <div class="branch1 wood"></div>
+          <div class="branch2 wood"></div>
+          <div class="branch3 wood"></div>
+        </div>
+        <div id="eyes">
+          <div class="charcoal left"></div>
+          <div class="charcoal right"></div>
+        </div>
+        <div id="mouth">
+          <div class="charcoal"></div>
+          <div class="charcoal"></div>
+          <div class="charcoal"></div>
+          <div class="charcoal"></div>
+          <div class="charcoal"></div>
+        </div>
+        <div id="carrot"></div>
+        <div id="hat">
+          <div class="hat"></div>
+          <div class="brim"></div>
+        </div>
+      </div>
+		<footer>
+		Background image is: <br />
+		<a href="https://www.vecteezy.com/free-vector/winter-landscape"
+			>Winter Landscape Vectors by Vecteezy</a
+		>
+		</footer>
+	</div>
+	<!-- do I want to add some JS? -->
+  </body>
+</html>
