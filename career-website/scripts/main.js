@@ -11,7 +11,7 @@ const btnParent = document.querySelector('.back-to-top');
 //items for the intersectionObserver
 const options = { };
 const observer = new IntersectionObserver(showButton, options);
-const careerTitle = document.querySelector('main header h2'); 
+const careerTitle = document.querySelector('main header h2') || document.querySelector('p.intro'); //play around with this
 
 //adds an event listener to toggle the class of active on both the menu link and the main nav so that element can be "opened up" on click
 menuLink.addEventListener( "click", function(){
