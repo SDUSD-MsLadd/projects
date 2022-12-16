@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Holiday Card</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="css/animations.css">
     <style>
         body{
             margin: 0 auto;
@@ -16,10 +17,15 @@
         h1{
             margin: 0;
             color: red;
-            font-size: 3em;
+            font-size: 500%;
+            transform: translateY(350%);
+            transition:all;
+            position: absolute;
+            width: 100%;
         }
 
         .wrapper{
+            position: relative;
             height: 100vh;
             width: 1000px;
             background-image:url(images/snowflakes-554635_1280.jpg);
@@ -27,12 +33,43 @@
             margin: 0 auto;
         }
 
+        /* testing a new animation */
+        .slideDown2{
+            animation-name: slideDown2;
+
+            animation-duration: 3s;	
+            /* changed the duration until I got something I liked */
+            animation-timing-function: ease;	
+
+            visibility: visible !important;						
+        }
+
+/* played around with these numbers until I got something I liked */
+
+        @keyframes slideDown2 {
+            0% {
+                transform: translateY(-300%);
+            }
+            40%{
+                transform: translateY(360%);
+            }
+            55%{
+                transform: translateY(300%);
+            }
+            70%{
+                transform: translateY(366%);
+            }
+            100% {
+                transform: translateY(350%);
+            }		
+}
+
 
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <h1>Happy Holidays!</h1>
+        <h1 class="slideDown2 fadeIn">Happy Holidays!</h1>
 
     </div>
 
