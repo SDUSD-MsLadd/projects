@@ -21,11 +21,23 @@ CSS Organization
     box-sizing: border-box;
 }
 
+/* micro clear fix */
+.cf:before,
+.cf:after {
+    content: " "; 
+    display: table; 
+}
+
+.cf:after {
+    clear: both;
+}
+
 body{
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #f4f6e4;
 }
 
 header.site-header, footer h5{
@@ -47,6 +59,10 @@ h2, h3, h4, h5, h6{
     color: var(--LHSGreen1);
 }
 
+header h2{
+    text-transform: capitalize;
+}
+
 .menu-link{
     cursor: pointer;
     display: inline-block;
@@ -56,6 +72,10 @@ h2, h3, h4, h5, h6{
     padding: .5em;
     border-radius: .5em;
     margin-left: .5em;
+}
+
+.menu-link.active{
+    background-color: var(--LHSYellowA);
 }
 
 .by-line{
@@ -71,6 +91,17 @@ a:hover{
     text-decoration: none;
     color: var(--LHSGreen2);
 }
+
+header.site-header a{
+    color: white;
+    text-decoration: none;
+}
+
+header.site-header a:hover{
+    color: var(--LHSYellow);
+
+}
+
 
 nav a{
     min-height: 50px;
@@ -91,6 +122,7 @@ nav.pathway.active{
 
 div.back-to-top{
     max-height: initial;
+    height: 47px;
 }
 
 nav h3.hidden{
@@ -148,6 +180,7 @@ figure.vertical-orientation, figure.horizontal-orientation{
     margin: 0;
 }
 
+
 figure.hero-image{
     margin: 0;
     width: 100%;
@@ -166,12 +199,31 @@ nav#internal {
     padding: 0 1em 1em;
 }
 
+nav.breadcrumb{
+    padding-bottom: .5em;
+}
+
+figure.img-white-bg img{
+    background-color: white;
+    border:5px solid white;
+}
+
+figure.padding-sm{
+    padding: .5em;
+}
+
+
+img.flip-h{
+    transform: scaleX(-1);
+}
+
 
 main {
     width: 100%;
     margin: 0;
     padding: 1em;
     min-height: calc(100vh - 1.5em);
+    background-color: white;
 }
 
 aside#related {
@@ -188,6 +240,8 @@ cite{
 
 dt{
     font-weight: bold;
+    text-transform: uppercase;
+    color: var(--LHSGreen2);
 }
 
 dd p{
@@ -197,6 +251,32 @@ dd ol{
     margin-top: 2px;
 }
 
+.right-align{
+    text-align: right;
+    color: var(--LHSGreen1);
+    font-style: italic;   
+}
+
+blockquote{
+    padding-top: 1em;
+}
+
+blockquote .quote{
+    position: relative;
+    color: var(--LHSGreen1);
+    margin-top: 1em;
+    font-weight: bold;
+ }
+
+ blockquote .quote:before {
+    position: absolute;
+    content: open-quote;
+    font-size: 4em;
+    margin-left: -0.5em;
+    margin-top: -0.5em;
+    font-family: arial;
+    font-style: italic;
+}
 
 @media screen and (min-width:550px) {
     nav.pathway{
@@ -222,6 +302,13 @@ dd ol{
         width: 40%;
         margin: 1em .5em 1em 1em;
     }
+
+    figure.square-orientation{
+        float: right; 
+        width: 40%;
+        margin: 1em;;
+    }
+
    }
    
 
@@ -272,7 +359,7 @@ dd ol{
     aside#related {
         float: right;
         width: 35%;
-        height: 100vh;
+        min-height: 100vh;
         position: sticky;
         top: 0;
     }

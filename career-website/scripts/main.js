@@ -11,7 +11,7 @@ const btnParent = document.querySelector('.back-to-top');
 //items for the intersectionObserver
 const options = { };
 const observer = new IntersectionObserver(showButton, options);
-const careerTitle = document.querySelector('main header h2') || document.querySelector('p.intro'); //play around with this
+const careerTitle = document.querySelector('main header h2') || document.querySelector('p.intro'); 
 
 //adds an event listener to toggle the class of active on both the menu link and the main nav so that element can be "opened up" on click
 menuLink.addEventListener( "click", function(){
@@ -19,15 +19,12 @@ menuLink.addEventListener( "click", function(){
     mainNav.classList.toggle('active');
     text = menuLink.textContent;
     //checks to see if the element has the class of active
-    setTimeout( function(){
         if(menuLink.classList.contains('active')){ 
             text = text.replace("Open", "Close");    
         }else{
             text = text.replace("Close", "Open");    
         }
-        menuLink.textContent = text;
-    }, 2000)
- 
+        menuLink.textContent = text; 
     return false; //exits the function
 })
 
@@ -65,7 +62,7 @@ function showButton(entries, observer){
 
         if(entry.isIntersecting){
             btnParent.classList.add("hidden");
-            console.log(btnParent);
+            //console.log(btnParent);
         }else{
             btnParent.classList.remove("hidden");
         }
